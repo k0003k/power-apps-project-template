@@ -6,7 +6,13 @@ This project uses shared development standards located in the `standards/` direc
 
 `standards/` is a Git submodule referencing the shared development standards repository.
 
+Use `standards/README.md` as the entry point for shared development standards.
+
 Do not load all development-standard documents by default.
+
+Do not scan or load all files under `standards/`.
+
+First inspect the standard index, then load only the documents relevant to the current task.
 
 For each task:
 
@@ -15,6 +21,8 @@ For each task:
 3. Identify only the development-standard documents under `standards/` that are relevant to the task.
 4. Read and apply those relevant standards before planning or implementing changes.
 5. Do not silently ignore or override a development standard.
+
+Do not assume requirements, architecture, or implementation decisions from other projects apply to this repository.
 
 ## Priority
 
@@ -37,14 +45,15 @@ If project work reveals that a shared standard is incorrect, ambiguous, incomple
 
 ## Development Workflow
 
-For non-trivial development tasks, use the following workflow:
+For non-trivial development tasks, use the following workflow in order:
 
 1. Research
 2. Plan
-3. Implement
-4. Validate
+3. Implement and Validate
 
-Use the reusable prompt files under `.github/prompts/` when appropriate.
+Use the corresponding reusable prompt files under `.github/prompts/` for each phase unless the user explicitly requests a different workflow.
+
+Do not begin implementation before completing the Research and Plan phases.
 
 ## External References
 
