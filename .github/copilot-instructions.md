@@ -68,6 +68,12 @@ Use `src/` as the project-standard working directory for Canvas App source files
 Do not assume that files under `src/` represent the current Power Platform state unless synchronization has been successfully completed for the current development session.
 
 If synchronization cannot be completed, explicitly report that the local source may be stale before performing implementation analysis or making implementation changes.
+When implementing changes to a Power Apps Canvas App, delegate Canvas App
+authoring operations to the available Canvas Apps authoring skill and use
+the Canvas Authoring MCP server for synchronization and modification.
+
+Do not modify `.pa.yaml` files as ordinary text files when the Canvas Apps
+authoring skill is available.
 
 ## External References
 
