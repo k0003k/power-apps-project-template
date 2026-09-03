@@ -53,7 +53,21 @@ For non-trivial development tasks, use the following workflow in order:
 
 Use the corresponding reusable prompt files under `.github/prompts/` for each phase unless the user explicitly requests a different workflow.
 
-Do not begin implementation before completing the Research and Plan phases.
+For non-trivial development tasks, do not begin implementation before completing the Research and Plan phases.
+
+## Power Apps Canvas Apps Source of Truth
+
+Power Platform is the authoritative source for the current Canvas App definition.
+
+The `src/` directory contains the local `.pa.yaml` representation used for AI-assisted development, analysis, source control, and review.
+
+When analyzing the current implementation or modifying an existing Canvas App, synchronize the current Power Apps Studio coauthoring session to `src/` using the Canvas Authoring MCP server before relying on the local source files.
+
+Use `src/` as the project-standard working directory for Canvas App source files, even if an external tool or skill uses a different default working-directory convention.
+
+Do not assume that files under `src/` represent the current Power Platform state unless synchronization has been successfully completed for the current development session.
+
+If synchronization cannot be completed, explicitly report that the local source may be stale before performing implementation analysis or making implementation changes.
 
 ## External References
 
