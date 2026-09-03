@@ -61,19 +61,31 @@ Power Platform is the authoritative source for the current Canvas App definition
 
 The `src/` directory contains the local `.pa.yaml` representation used for AI-assisted development, analysis, source control, and review.
 
-When analyzing the current implementation or modifying an existing Canvas App, synchronize the current Power Apps Studio coauthoring session to `src/` using the Canvas Authoring MCP server before relying on the local source files.
+Do not assume that files under `src/` represent the current Power Platform state unless synchronization has been successfully completed.
 
-Use `src/` as the project-standard working directory for Canvas App source files, even if an external tool or skill uses a different default working-directory convention.
+### Research
 
-Do not assume that files under `src/` represent the current Power Platform state unless synchronization has been successfully completed for the current development session.
+Before researching the current implementation of an existing Canvas App, use the Canvas Authoring MCP server to synchronize the current Power Apps Studio coauthoring session to `src/`.
 
-If synchronization cannot be completed, explicitly report that the local source may be stale before performing implementation analysis or making implementation changes.
-When implementing changes to a Power Apps Canvas App, delegate Canvas App
-authoring operations to the available Canvas Apps authoring skill and use
-the Canvas Authoring MCP server for synchronization and modification.
+Research the synchronized source under `src/` together with project requirements under `docs/` and the applicable development standards under `standards/`.
 
-Do not modify `.pa.yaml` files as ordinary text files when the Canvas Apps
-authoring skill is available.
+During the Research phase, use Canvas Authoring MCP only as necessary to obtain or inspect the current implementation state.
+
+Do not modify the Canvas App during the Research phase.
+
+If synchronization cannot be completed, explicitly report that the current implementation state could not be verified. Do not silently rely on potentially stale files under `src/`.
+
+### Implementation
+
+Before implementing changes to an existing Canvas App, synchronize the current Power Apps Studio coauthoring session to `src/` again to ensure that implementation is based on the latest Power Platform state.
+
+When implementing changes to a Canvas App, use the available Canvas Apps authoring skill and Canvas Authoring MCP tools rather than treating the `.pa.yaml` files as ordinary source files.
+
+Use `src/` as the project-standard working directory for Canvas App source files.
+
+If synchronization or the required Canvas authoring tools are unavailable, explicitly report the limitation before making implementation changes.
+
+After implementation, validate the resulting Canvas App and confirm that the local source representation is synchronized with the resulting Power Platform state.
 
 ## External References
 
